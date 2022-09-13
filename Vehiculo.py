@@ -14,7 +14,6 @@ class Coche(Vehiculo):
     def __str__(self):
         return Vehiculo.__str__(self) + ", {} km/h, {}".format(self.velocidad, self.cilindrada)
 c = Coche("azul", 4, 150, 1200)
-print(c)
 
 class Camioneta(Coche):
     def __init__(self,color, ruedas, velocidad, cilindrada,carga):
@@ -23,7 +22,7 @@ class Camioneta(Coche):
     def __str__(self):
         return Coche.__str__(self) + ", {} kilos".format(self.carga)
 
-camioneta1 = Camioneta("roja",4,130,1100,500)
+camioneta1 = Camioneta("rojo",4,130,1100,500)
 
 #----------HERENCIA MÚLTIPLE----------#
 #----------herencia de los vehiculos de 2 ruedas----------#
@@ -60,18 +59,21 @@ def catalogar(lista):
     for vehiculo in lista:
         informacion = "El vehiculo es un "+ type(vehiculo).__name__+" y sus atributos son: "+ str(vehiculo)
         print(informacion)
+print("\nComprobamos la funcion catalogar: ")
 catalogar(lista_vehiculos)
-print("\n Volvemos a empezar")
+print("\n Comprobamos la funcion catalogar con el polimorfismo de sobreecarga correspondiente : ")
 #----------funcion_catalogar_polimorfismo_de_sobrecarga----------#
 def catalogar(lista, ruedas):
     contador =0
     print("\n")
     for vehiculo in lista:
-        informacion = "El vehiculo es un "+ type(vehiculo).__name__+" y sus atributos son: "+ str(vehiculo)
+        informacion = "El vehiculo es un/a "+ type(vehiculo).__name__+" y sus atributos son: "+ str(vehiculo)
         if (vehiculo.ruedas == ruedas):
             contador +=1
             print(informacion)
-    print(contador)
+    # print(contador)
+    if(contador ==0):
+        print("No hay ningun vehiculo con {} ruedas".format(str(ruedas)))
     print("Por lo tanto, se han encontrado {} vehiculos con {} ruedas".format(str(contador),str(ruedas)))
 
 catalogar(lista_vehiculos, 2)
