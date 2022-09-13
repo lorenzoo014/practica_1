@@ -24,7 +24,6 @@ class Camioneta(Coche):
 
 camioneta1 = Camioneta("rojo",4,130,1100,500)
 
-#----------HERENCIA MÚLTIPLE----------#
 #----------herencia de los vehiculos de 2 ruedas----------#
 class Bicicleta(Vehiculo):
     def __init__(self, color, ruedas, tipo):
